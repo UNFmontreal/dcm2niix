@@ -1,5 +1,5 @@
 name: Release
-on: {push: {tags: ['v*.*.*']}}
+on: {push: {branch: ['unf_prod']}}
 jobs:
   pypi:
     permissions: {id-token: write}
@@ -10,4 +10,4 @@ jobs:
     - uses: actions/setup-python@v5
       with: {python-version: '3.x'}
     - uses: casperdcl/deploy-pypi@v2
-      with: {build: -s, upload: true}
+      with: {build: -s, upload: false}
